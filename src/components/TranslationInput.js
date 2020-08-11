@@ -1,10 +1,27 @@
 import React from "react";
 
-const TranslationInput = () => {
+const TranslationInput = (props) => {
   return (
-    <div>
-      <h1>hello from input</h1>
-    </div>
+    <form onSubmit={props.submitText}>
+      <div className="input-group mb-3">
+        <input
+          name="text"
+          type="text"
+          className="form-control"
+          placeholder="Enter Text"
+          onChange={props.editText}
+        />
+        <div className="input-group-append">
+          <button
+            className="btn btn-outline-secondary"
+            type="submit"
+            id="button-addon2"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
   );
 };
 
